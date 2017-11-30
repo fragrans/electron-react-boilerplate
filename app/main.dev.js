@@ -62,7 +62,8 @@ app.on('ready', async () => {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize;
   
   mainWindow = new BrowserWindow({
-    kiosk: true,
+    // kiosk: true,
+    fullscreen: true,
     show: false,
     resizable: false,
     x: 0,
