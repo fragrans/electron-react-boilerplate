@@ -54,13 +54,18 @@ app.on('window-all-closed', () => {
 });
 
 
+app.on('browser-window-created', (e, window) => {
+  window.setMenu(null);
+});
+
+
 app.on('ready', async () => {
-  if (process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true') {
-    await installExtensions();
-  }
+  // if (process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true') {
+  //   await installExtensions();
+  // }
 
   const { width, height } = screen.getPrimaryDisplay().workAreaSize;
-  
+
   mainWindow = new BrowserWindow({
     // kiosk: true,
     fullscreen: true,
@@ -83,12 +88,14 @@ app.on('ready', async () => {
     mainWindow.show();
     mainWindow.maximize();
     mainWindow.focus();
+    // mainWindow.fullscreen();
   });
 
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
 
-  const menuBuilder = new MenuBuilder(mainWindow);
-  menuBuilder.buildMenu();
+  // const menuBuilder = new MenuBuilder(mainWindow);
+  // menuBuilder.buildMenu();
 });
+
