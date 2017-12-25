@@ -5,18 +5,19 @@ import styles from './Home.css';
 
 export default class Home extends Component {
   render() {
-    var aStyle = {
+    const aStyle = {
       backgroundColor: 'red',
-      fontSize:'100px'
+      fontSize: '100px'
     };
-
+    
     return (
-      <div style={{backgroundColor:'aqua'}}>
-        <div className={styles.container} data-tid="container">
-          <h2>适配器号</h2>
-          <div> John Doe </div>
-          <input style={aStyle} type="text" value="CX001" size="8" />
-        </div>
+      <div style={{ backgroundColor: 'aqua' }}>
+      <div className={styles.container} data-tid="container">
+      <h2>适配器号</h2>
+      <div> John Doe </div>
+      <input style={aStyle} type="text" size="8" />
+      <input type="text" size="8" />
+      </div>
       </div>
     );
   }

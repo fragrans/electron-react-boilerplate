@@ -68,7 +68,9 @@ app.on('ready', async () => {
 
   mainWindow = new BrowserWindow({
     // kiosk: true,
-    fullscreen: true,
+    // fullscreen: true, => fullscreen
+    //
+    fullscreen: false,
     show: false,
     resizable: false,
     x: 0,
@@ -95,7 +97,10 @@ app.on('ready', async () => {
     mainWindow = null;
   });
 
-  // const menuBuilder = new MenuBuilder(mainWindow);
-  // menuBuilder.buildMenu();
+  //
+  // comment below lines to disable menu.
+  //
+  const menuBuilder = new MenuBuilder(mainWindow);
+  menuBuilder.buildMenu();
 });
 
