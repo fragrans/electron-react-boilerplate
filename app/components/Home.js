@@ -12,11 +12,12 @@ export default class Home extends Component {
     
     return (
       <div style={{ backgroundColor: 'aqua' }}>
-      <div className={styles.container} data-tid="container">
-      <h2>适配器号</h2>
-      <div> John Doe </div>
+      <div style={{ float: 'left' }}>  John Doe </div>
+      <div style={{ float: 'right' }}> Date / Time </div>
+      <div style={{ width: '100%' }} className={styles.container} data-tid="container">
+      <h2>请读卡</h2>
+      
       <input style={aStyle} type="text" size="8" />
-      <input type="text" size="8" />
       </div>
       </div>
     );
